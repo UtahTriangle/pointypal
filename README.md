@@ -72,7 +72,7 @@ These administrator commands will only be accepted by users that have both the s
 * `@PointyPal clean-manager`
     - Creates a new copy of the **#📝pal-class-manager** chat, complete with a new greeting message, and then deletes the old copy of the channel.
 
-### Backwards Compatability
+## Backwards Compatability
 
 Have you already been managing student classes by hand? Because PointyPal is a stateless application, it can accomodate structures that servers already have in place with some adjustment!
 
