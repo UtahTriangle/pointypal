@@ -9,4 +9,4 @@ Some example course codes might be `CHEM1051`, `CS2100`, or `MEEN3010`, but any 
 
 **Server owners:** You can move this channel wherever fits best for you - just make sure not to rename the chat and that it remains visible to {bot_name}!
 
-If you run into any issues, take a look at our help page at `TBD` or contact the team at https://discord.com/invite/sd5G5Zc !
+If you run into any issues, contact us at <https://github.com/UtahTriangle/pointypal> or at https://discord.com/invite/sd5G5Zc !

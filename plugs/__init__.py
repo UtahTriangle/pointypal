@@ -60,8 +60,8 @@ async def post_help(
     message: discord.Message,
 ):
     await message.reply(
-        f"Need help using {client.user.mention}? View the help page on GitHub "
-         "or contact the team at https://discord.com/invite/sd5G5Zc"
+        f"Need help using {client.user.mention}? View the help page at <https://github.com/UtahTriangle/pointypal> "
+         "or contact the team at https://discord.com/invite/sd5G5Zc !"
     )
 
 async def post_greeting(
