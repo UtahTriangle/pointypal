@@ -437,6 +437,7 @@ async def delete_classes(
 
     return num_changes > 0
 
+
 async def post_greeting(
     client: discord.client,
     message: discord.message,
@@ -485,6 +486,12 @@ command_lookup = {
 
     "join-department": join_departments,
     "join-departments": join_departments,
+
+    "add-class": join_classes,
+    "add-classes": join_classes,
+
+    "add-department": join_departments,
+    "add-departments": join_departments,
 
     "drop-class": remove_classes,
     "drop-classes": remove_classes,
