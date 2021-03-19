@@ -1,8 +1,14 @@
 # PointyPal: Zoom School Done Better
 
-PointyPal is a student-run Discord application project sponsored by Utah Triangle at the University of Utah. The application allows University-oriented Discord servers to host class and department-specific channels and voice chats. PointyPal keeps these channels and chats visible **only** to those who are in those departments and courses, keeping the server tidy for everybody.
+---
 
-While designed for University of Utah organizations in mind, development attempts to remain compatible with course systems for other American university systems.
+**Invite PointyPal to your Discord Server at [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org)!**
+
+---
+
+PointyPal is a student-run Discord application project sponsored by Utah Triangle at the University of Utah. The application allows University-oriented Discord servers to host class and department-specific channels and voice chats. **PointyPal keeps class channels and chats visible only to those who are in these classes** and departments, keeping your server tidy for everybody.
+
+While designed for University of Utah organizations in mind, development attempts to remain **compatible other American universities'** class systems.
 
 The largest PointyPal community, exclusive to University of Utah students, is hosted at [campus.utahtriangle.org](https://campus.utahtriangle.org). During its' release term in Fall 2020, PointyPal supported this community of **400** University of Utah students in **93 classes across 30 majors**, contributing a total of **11,000 messages** and **1,900** hours of voice chat.
 
@@ -68,15 +74,21 @@ These administrator commands will only be accepted by users that have both the s
 
 ## Privacy
 
-PointyPal is a **stateless application** that relies entirely on the Discord client to keep track of its' server memberships. The application will remain that way for the foreseeable future. As such, no data is or will be stored anywhere while the application is running.
+PointyPal itself is a **stateless application** - no data is stored outside of Discord itself. The application will remain that way for the foreseeable future. As such, no data is or will be stored anywhere while the application is running.
 
 While the bot is active, it retains the ability to view and modify the specific channels it manages. However, it is not necessary to make the rest of the server visible to the bot. We would encourage you to **limit the non-class channels PointyPal has access to** by reducing how much its' bot Role can see.
 
-The permissions given to PointyPal by default are the minimum necessary to provide a polished experience. While you are able to modify these permissions, **we cannot guarantee PointyPal will function.**
+The permissions given to PointyPal by default are the minimum necessary to provide a polished experience. You are able to modify these permissions, but **we cannot guarantee PointyPal will function properly if you modify the permissions necessary for it to function.**
+
+## Warranty
+
+As a student-driven project, PointyPal is largely a learning experience. It has been tested for stability for a number of months at [campus.utahtriangle.org](https://campus.utahtriangle.org). However, **use of PointyPal to manage class channels is done so at your own risk, and with no guarantee.** We encourage server owners to take the proper precautions, as they should with any third-party application, by limiting the portion of the server PointyPal has access to as much as possible. 
 
 ## Removing PointyPal
 
 If you are going to remove PointyPal, we strongly encourage that you **utilize the administrator commands** to clean your server of all PointyPal-managed channels prior to removal. Once PointyPal is removed, all PointyPal-managed channels will need to be removed by hand. Re-adding the bot will not fix this issue.
+
+---
 
 If you do encounter issues with PointyPal, we encourage you to contact either:
 
