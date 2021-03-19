@@ -1,0 +1,12 @@
+Congratulations on adding {bot_name} to your server! Students can now use the {chan_name} to join group chats for their departments and courses without any clutter!
+
+Students can use PointyPal to join their course or department by messaging in the chat:
+
+`@PointyPal join-class [COURSE CODE]`
+`@PointyPal join-department [DEPARTMENT]`
+
+Some example course codes might be `CHEM1051`, `CS2100`, or `MEEN3010`, but any class in this format will work!
+
+**Server owners:** You can move this channel wherever fits best for you - just make sure not to rename the chat and that it remains visible to {bot_name}!
+
+If you run into any issues, take a look at our help page at `TBD` or contact the team at https://discord.com/invite/sd5G5Zc !
