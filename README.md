@@ -72,6 +72,20 @@ These administrator commands will only be accepted by users that have both the s
 * `@PointyPal clean-manager`
     - Creates a new copy of the **#📝pal-class-manager** chat, complete with a new greeting message, and then deletes the old copy of the channel.
 
+### Backwards Compatability
+
+Have you already been managing student classes by hand? Because PointyPal is a stateless application, it can accomodate structures that servers already have in place with some adjustment!
+
+Across the board, all PointyPal departments and classes are structured in the following way:
+
+- \> PHYS
+    - \# phys
+    - \# phys1010
+    - \# phys2010
+    - 🔊 PHYS Study Room
+
+PointyPal operates off a system where the department Category Channel is an all-capitalized abbreviation, and class text chats are lowercased version of the class code. So long as departments and classes are structured that way **and are visible to PointyPal**, PointyPal can automatically add students into your already-existing class chats.
+
 ## Privacy
 
 PointyPal itself is a **stateless application** - no data is stored outside of Discord itself. The application will remain that way for the foreseeable future. As such, no data is or will be stored anywhere while the application is running.
