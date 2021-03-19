@@ -31,7 +31,8 @@ async def on_message(message: discord.Message):
 
     # Check if the command was a registered !pal command
     if     ((message.content.startswith('!pal'))
-         or (message.content.startswith(f"<@!{client.user.id}>"))
+         or (message.content.startswith(f"<@!{client.user.id}>")) # Desktop
+         or (message.content.startswith(f"<@{client.user.id}>")) # Mobile, for some damn reason.
        and (message.channel.name == command_channel_name)):
 
         tokens = message.content.split(" ")
