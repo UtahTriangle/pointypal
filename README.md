@@ -6,6 +6,8 @@
 
 ---
 
+![](assets/join_demo.gif)
+
 PointyPal is a student-run Discord application project sponsored by Utah Triangle at the University of Utah. The application allows University-oriented Discord servers to host class and department-specific channels and voice chats. **PointyPal keeps class channels and chats visible only to those who are in these classes** and departments, keeping your server tidy for everybody.
 
 While designed for University of Utah organizations in mind, development attempts to remain **compatible other American universities'** class systems.
