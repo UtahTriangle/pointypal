@@ -100,6 +100,12 @@ The permissions given to PointyPal by default are the minimum necessary to provi
 
 As a student-driven project, PointyPal is largely a learning experience. It has been tested for stability for a number of months at [campus.utahtriangle.org](https://campus.utahtriangle.org). However, **use of PointyPal to manage class channels is done so at your own risk, and with no guarantee.** We encourage server owners to take the proper precautions, as they should with any third-party application, by limiting the portion of the server PointyPal has access to as much as possible. 
 
+## Future Additions
+
+In the future, we'd like to add functionalities for:
+
+- Whitelisting department names to avoid [this](assets/daddy101.png)
+
 ## Removing PointyPal
 
 If you are going to remove PointyPal, we strongly encourage that you **utilize the administrator commands** to clean your server of all PointyPal-managed channels prior to removal. Once PointyPal is removed, all PointyPal-managed channels will need to be removed by hand. Re-adding the bot will not fix this issue.
