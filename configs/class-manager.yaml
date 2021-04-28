@@ -1,0 +1,175 @@
+# Maximum number of classes or departments that can be added at once.
+max_command_args: 5
+
+commands:
+
+  help:
+    aliases:
+      - help
+      - please
+    bot_permissions:
+      guild: []
+      channel:
+        - read_messages
+        - send_messages
+    user_permissions: []
+
+  # Method name in the ClassManager
+  join_classes:
+
+    # Appropriate Discord command aliases
+    aliases:
+      - join-class
+      - join-classes
+      - add-class
+      - add-classes
+
+    # Permissions required for the bot to execute
+    # this command.
+    bot_permissions:
+
+      # Guild-wide permissions
+      guild:
+        - manage_channels
+        - manage_permissions
+
+      # Channel permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+
+    # Permissions required for the user to make
+    # this command. In this case, no permissions
+    # from the user are needed.
+    user_permissions:
+      guild: []
+      channel: [] 
+
+  join_departments:
+    aliases:
+      - join-department
+      - join-departments
+      - add-department
+      - add-departments
+    method: help
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild: []
+      channel: [] 
+
+  remove_classes:
+    aliases:
+      - remove-class
+      - remove-classes
+      - leave-class
+      - leave-classes
+      - drop-class
+      - drop-classes
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild: []
+      channel: [] 
+
+
+  place_in_classes:
+
+    aliases:
+      - place-in-class
+      - place-in-classes
+
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+
+    user_permissions:
+      guild:
+        - manage_permissions
+      channel: []
+
+  place_in_departments:
+    aliases:
+      - place-in-department
+      - place-in-departments
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild:
+        - manage_permissions
+      channel: []
+
+  delete_classes:
+    aliases:
+      - delete-class
+      - delete-classes
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild:
+        - manage_permissions
+      channel: []
+
+  delete_departments:
+    aliases:
+      - delete-department
+      - delete-departments
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild:
+        - manage_permissions
+      channel: []
+
+  clean_manager:
+    aliases:
+      - clean-manager
+      - new-manager
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild:
+        - manage_permissions
+      channel: []

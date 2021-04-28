@@ -1,13 +1,28 @@
 import discord
-from typing import List
-from class_manager import run_command
-import plugs
+import yaml
+from utils.CommandManager import CommandManager
 
+# ===== CONFIG SETUP ===========================================================
+
+# Import config and secrets
+CONFIG_PATH = "configs/config.yaml"
+SECRET_PATH = "configs/secrets.yaml"
+
+# Load secrets into dict
+SECRET = None
+with open(SECRET_PATH, 'r') as file:
+    SECRET = yaml.load(file, Loader=yaml.FullLoader)
+
+# ===== CLIENT SETUP ===========================================================
+
+# Allow the bot to see server members by setting member intent to true.
+# SPECIFICALLY required for admin commands.
 intents = discord.Intents.default()
 intents.members = True
 client = discord.Client(intents=intents)
 
-command_channel_name = "📝pal-class-manager"
+# Instantiate a command manager
+command_manager = CommandManager(client, CONFIG_PATH)
 
 @client.event
 async def on_ready():
@@ -15,37 +30,23 @@ async def on_ready():
 
 @client.event
 async def on_guild_join(guild: discord.Guild):
-
-    channel: discord.TextChannel = await guild.create_text_channel(command_channel_name)
-
-    plugs.post_greeting(client, channel)
-
-    await plugs.add_positive_emoji(guild, "assets/success.png")
+    pass
 
 @client.event
 async def on_message(message: discord.Message):
 
-    # Skip the message if the message was sent by the client
+    # Skip the message if the message was sent by the client, or if the
+    # bot isn't ready to accept commands yet.
+    if not is_ready:
+        print("Message recieved before bot was ready.")
+        return
+        
     if message.author == client.user:
         return
 
-    # Check if the command was a registered !pal command
-    if     ((message.content.startswith('!pal'))
-         or (message.content.startswith(f"<@!{client.user.id}>")) # Desktop
-         or (message.content.startswith(f"<@{client.user.id}>")) # Mobile, for some damn reason.
-       and (message.channel.name == command_channel_name)):
+    if command_manager.is_command(message):
 
-        tokens = message.content.split(" ")
+        command_manager.run(message)
 
-        result = await run_command(client, message, tokens)
-
-        await plugs.verify_command(message, result)
-
-        if not result:
-            await plugs.post_help(client, message)
-
-token = ""
-with open('assets/token', 'r') as file:
-    token = file.read()
-
-client.run(token)
+is_ready = True
+client.run(SECRET["token"])

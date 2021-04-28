@@ -1,0 +1,7 @@
+prefix: "!pal"
+
+# A list of modules and the channel their commands will come from
+modules:
+  class_manager:
+    config_path: class-manager.yaml
+    channel: 📝class-manager
