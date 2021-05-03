@@ -1,3 +1,6 @@
+positive_emoji: "triangle_heart"
+heart_path: "assets/success.png"
+
 commands:
 
   help:
@@ -11,4 +14,18 @@ commands:
         - send_messages
     user_permissions:
       guild: []
+      channel: []
+
+  add_positive_emoji:
+    aliases:
+      - add-positive-emoji
+      - add-heart
+      - heart
+    bot_permissions:
+      guild:
+        - manage_emojis
+      channel: []
+    user_permissions:
+      guild:
+        - manage_emojis
       channel: []

@@ -62,11 +62,15 @@ class CommandManager:
             )
 
             for actor, scope, perm in missing_perms:
-                error_string += f"\n{actor}, {perm}"
+                actor = str(actor).split("#")[0]
+                perm  = perm.replace("_", " ")
+                perm  = perm.title()
+                error_string += f"\n{actor}: {perm}"
 
             error_string += "\n```"
 
             await message.reply(error_string)
+            await self.modules["general_commands"].verify_command(message, False)
             return
 
         # Execute command function
@@ -76,8 +80,11 @@ class CommandManager:
                 message,
                 tokens[1:],
             )
+            await self.modules["general_commands"].verify_command(message, True)
+
         except Exception as e:
             await message.reply(f"It looks like there was an issue with your request. {str(e)}")
+            await self.modules["general_commands"].verify_command(message, False)
 
         return
 

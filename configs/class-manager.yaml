@@ -24,6 +24,7 @@ commands:
       guild:
         - manage_channels
         - manage_permissions
+        - create_instant_invite
 
       # Channel permissions
       channel:
@@ -49,6 +50,7 @@ commands:
       guild:
         - manage_channels
         - manage_permissions
+        - create_instant_invite
       channel:
         - read_messages
         - send_messages
@@ -107,6 +109,7 @@ commands:
       guild:
         - manage_channels
         - manage_permissions
+        - create_instant_invite
       channel:
         - read_messages
         - send_messages
@@ -125,6 +128,7 @@ commands:
       guild:
         - manage_channels
         - manage_permissions
+        - create_instant_invite
       channel:
         - read_messages
         - send_messages
@@ -155,23 +159,6 @@ commands:
     aliases:
       - delete-department
       - delete-departments
-    bot_permissions:
-      guild:
-        - manage_channels
-        - manage_permissions
-      channel:
-        - read_messages
-        - send_messages
-        - add_reactions
-    user_permissions:
-      guild:
-        - manage_permissions
-      channel: []
-
-  clean_manager:
-    aliases:
-      - clean-manager
-      - new-manager
     bot_permissions:
       guild:
         - manage_channels
