@@ -1,18 +1,10 @@
 # Maximum number of classes or departments that can be added at once.
-max_command_args: 5
+max_command_args: 10
+creation_delay: 1000
+department_regex: "^[a-zA-Z]{2,6}"
+class_regex: "^[a-zA-Z]{2,6}[0-9]{3,5}$"
 
 commands:
-
-  help:
-    aliases:
-      - help
-      - please
-    bot_permissions:
-      guild: []
-      channel:
-        - read_messages
-        - send_messages
-    user_permissions: []
 
   # Method name in the ClassManager
   join_classes:
@@ -85,6 +77,25 @@ commands:
       guild: []
       channel: [] 
 
+  remove_departments:
+    aliases:
+      - remove-department
+      - remove-departments
+      - leave-department
+      - leave-departments
+      - drop-department
+      - drop-departments
+    bot_permissions:
+      guild:
+        - manage_channels
+        - manage_permissions
+      channel:
+        - read_messages
+        - send_messages
+        - add_reactions
+    user_permissions:
+      guild: []
+      channel: [] 
 
   place_in_classes:
 

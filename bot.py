@@ -38,15 +38,14 @@ async def on_message(message: discord.Message):
     # Skip the message if the message was sent by the client, or if the
     # bot isn't ready to accept commands yet.
     if not is_ready:
-        print("Message recieved before bot was ready.")
+        print("Message received before bot was ready.")
         return
         
     if message.author == client.user:
         return
 
     if command_manager.is_command(message):
-
-        command_manager.run(message)
+        await command_manager.run(message)
 
 is_ready = True
 client.run(SECRET["token"])
