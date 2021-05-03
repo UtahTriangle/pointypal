@@ -3,7 +3,6 @@
 
 # Ignore secrets file
 *secrets.yaml
-!*.sample
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
