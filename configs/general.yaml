@@ -1,0 +1,12 @@
+commands:
+
+  help:
+    aliases:
+      - help
+      - please
+    bot_permissions:
+      guild: []
+      channel:
+        - read_messages
+        - send_messages
+    user_permissions: []
