@@ -18,13 +18,7 @@ The largest PointyPal community, exclusive to University of Utah students, is ho
 
 With the entire source code available here, anybody is welcome to host their own instance of PointyPal. However, Utah Triangle hosts an instance of PointyPal for free.
 
-To add PointyPal to your server, go to [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org) and grant the bot the necessary permissions. Once finished, you'll receive a notification that PointyPal was added to your server successfully, and was able to create the **#📝pal-class-manager** chat.
-
-## Using the Class Manager
-
-Upon joining the server, PointyPal will create the **#📝pal-class-manager** chat. This chat is the **only** location where PointyPal will respond to any bot-specific commands. The placement of this chat is flexible - as long as PointyPal has the access to read messages in the Class Manager channel, it will work.
-
-Note that the name of the Class Manager channel **must** be **#📝pal-class-manager**. If the chat is renamed, or is not visible to PointyPal, it will not be able to respond to any commands. If the channel is ever renamed or removed, simply create a new channel of the same name.
+To add PointyPal to your server, go to [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org) and grant the bot the necessary permissions. Once finished, you'll receive a notification that PointyPal was added to your server successfully.
 
 ## General Commands
 
@@ -68,15 +62,9 @@ These administrator commands will only be accepted by users that have both the s
     - **Permanently deletes** the **entire** category for the given department, **including all classes**.
         - This command was designed specifically for clearing out all previous classes at the end of each term.
 
-* `@PointyPal post-greeting`
-    - Re-posts the greeting message that was sent on PointyPal's initial invitation to the server.
+## Backwards Compatibility
 
-* `@PointyPal clean-manager`
-    - Creates a new copy of the **#📝pal-class-manager** chat, complete with a new greeting message, and then deletes the old copy of the channel.
-
-## Backwards Compatability
-
-Have you already been managing student classes by hand? Because PointyPal is a stateless application, it can accomodate structures that servers already have in place with some adjustment!
+Have you already been managing student classes by hand? Because PointyPal is a stateless application, it can accommodate structures that servers already have in place with some adjustment!
 
 Across the board, all PointyPal departments and classes are structured in the following way:
 
@@ -86,7 +74,7 @@ Across the board, all PointyPal departments and classes are structured in the fo
     - \# phys2010
     - 🔊 PHYS Study Room
 
-PointyPal operates off a system where the department Category Channel is an all-capitalized abbreviation, and class text chats are lowercased version of the class code. So long as departments and classes are structured that way **and are visible to PointyPal**, PointyPal can automatically add students into your already-existing class chats.
+PointyPal operates off a system where the department Category Channel is an all-capitalized abbreviation, and class text chats are lower-cased version of the class code. So long as departments and classes are structured that way **and are visible to PointyPal**, PointyPal can automatically add students into your already-existing class chats.
 
 ## Privacy
 
