@@ -13,11 +13,11 @@ class GeneralCommands:
             self.CONFIG = DotMap(config_dict)
 
     async def help(self, message, tokens):
-        message.reply(
+        await message.reply(
             "If you need help, be sure to check out the documentation "
             "at <https://github.com/UtahTriangle/pointypal/>!\n"
             "\n"
-            "For basic joining and leaving, you can use:\n"
+            "For basic joining and leaving courses, you can use:\n"
             "```\n"
             "@PointyPal join-class CS1410\n"
             "@PointyPal drop-class BIO4200\n"

@@ -9,4 +9,6 @@ commands:
       channel:
         - read_messages
         - send_messages
-    user_permissions: []
+    user_permissions:
+      guild: []
+      channel: []
