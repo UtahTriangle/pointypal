@@ -2,7 +2,7 @@
 
 ---
 
-**Invite PointyPal to your Discord Server at [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org)!**
+**You can add PointyPal to your Discord Server at [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org)!**
 
 ---
 
