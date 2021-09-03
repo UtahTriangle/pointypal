@@ -33,7 +33,7 @@ async def on_guild_join(guild: discord.Guild):
 
     # Add the success emoji automatically on guild join
     # TODO: Exception/permissions handling
-    command_manager.modules["general_commands"].add_positive_emoji_override(
+    await command_manager.modules["general_commands"].add_positive_emoji_override(
         guild
     )
 

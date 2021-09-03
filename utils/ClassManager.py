@@ -188,7 +188,7 @@ class ClassManager:
 
         # Once all the verifications have passed, add the target user
         # to all classes provided.
-        await join_departments(self.client, message, args[1:])
+        await self.join_departments(self.client, message, args[1:])
 
 
     async def delete_departments(
