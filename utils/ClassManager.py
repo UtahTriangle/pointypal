@@ -35,12 +35,11 @@ class ClassManager:
 
         return 
 
-
     async def join_departments(
         self,
-        message: discord.message,
+        message: discord.Message,
         args
-    ):
+    ): 
 
         # Snag the guild and member from the message.
         guild: discord.Guild = message.guild
@@ -54,34 +53,43 @@ class ClassManager:
         # were made, return false to let the program know
         # that the command failed altogether.
         for arg in args:
+            result = await self.join_department(guild, member, arg)
 
-            # Pick out the department portion from the string.
-            # If the string isn't valid, skip it and move on.
-            matches = re.search(self.CONFIG.department_regex, arg)
-            if matches is None:
-                raise Exception(f"`{arg[:10]}` wasn't a valid department code.")
 
-            department = matches[0].upper()
+    async def join_department(
+        self,
+        guild: discord.Guild,
+        member: discord.Member,
+        department_name: str
+    ):
 
-            # Attempt to get the department category channel - 
-            # if none exists, create one
-            dep_channel = discord.utils.get(guild.channels, name=department.upper())
-            if (dep_channel is None) or (type(dep_channel) != discord.CategoryChannel):
-                dep_channel = await guild.create_category(department)
+        # Pick out the department portion from the string.
+        # If the string isn't valid, skip it and move on.
+        matches = re.search(self.CONFIG.department_regex, department_name)
+        if matches is None:
+            raise Exception(f"`{department_name}` wasn't a valid department code.")
 
-                # Add the necessary member permissions for PointyPal to access
-                # this chat, and then hide it from everybody else.
-                await dep_channel.set_permissions(self.client.user, view_channel=True)
-                await dep_channel.set_permissions(guild.default_role, view_channel=False,
-                                                                    read_messages=False)
+        department = matches[0].upper()
 
-            channels = [
-                (department.lower(), discord.TextChannel),
-                (f"{department.upper()} Study Room", discord.VoiceChannel)
-            ]
+        # Attempt to get the department category channel - 
+        # if none exists, create one
+        dep_channel = discord.utils.get(guild.channels, name=department.upper())
+        if (dep_channel is None) or (type(dep_channel) != discord.CategoryChannel):
+            dep_channel = await guild.create_category(department)
 
-            for c in channels:
-                result = await self.create_and_join_class(c[0], member, c[1], dep_channel)
+            # Add the necessary member permissions for P﻿ointyPal to access
+            # this chat, and then hide it from everybody else.
+            await dep_channel.set_permissions(self.client.user, view_channel=True)
+            await dep_channel.set_permissions(guild.default_role, view_channel=False,
+                                                                read_messages=False)
+
+        channels = [
+            (department.lower(), discord.TextChannel),
+            (f"{department.upper()} Study Room", discord.VoiceChannel)
+        ]
+
+        for c in channels:
+            result = await self.create_and_join_class(c[0], member, c[1], dep_channel)
 
         return 
 
@@ -188,7 +196,7 @@ class ClassManager:
 
         # Once all the verifications have passed, add the target user
         # to all classes provided.
-        await self.join_departments(self.client, message, args[1:])
+        await self.join_department(guild, member, args[1])
 
 
     async def delete_departments(
@@ -301,7 +309,7 @@ class ClassManager:
     ):
 
         # Find (or create) class chats.
-        channel: GuildChannel = discord.utils.get(parent.channels, name=name)
+        channel: discord.GuildChannel = discord.utils.get(parent.channels, name=name)
         if (channel is None):
 
             # Create class, and post a message welcoming the member.

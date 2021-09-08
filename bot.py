@@ -31,11 +31,32 @@ async def on_ready():
 @client.event
 async def on_guild_join(guild: discord.Guild):
 
+    print(f"Bot has been added to server: {guild.name}")
+
     # Add the success emoji automatically on guild join
     # TODO: Exception/permissions handling
     await command_manager.modules["general_commands"].add_positive_emoji_override(
         guild
     )
+
+    if guild.system_channel:
+        sys_channel: discord.TextChannel = guild.system_channel
+        await sys_channel.send(
+            "Congratulations on installing PointyPal! PointyPal helps you "
+            "keep your academic Discord server clean by letting students "
+            "add themselves to class and department channels. To use PointyPal, "
+            "simply tag it at the beginning of a message!\n"
+            "\n"
+            "For basic joining and leaving courses, you can use:\n"
+            "```\n"
+            "@PointyPal join-class CS1410\n"
+            "@PointyPal drop-class BIO4200\n"
+            "@PointyPal join-department PHYS\n"
+            "```"
+            "If you have issues using the bot, or need documentation for "
+            "administrator commands, be sure to check out the documentation "
+            "at <https://github.com/UtahTriangle/pointypal/>!"
+        )
 
     pass
 
@@ -52,7 +73,11 @@ async def on_message(message: discord.Message):
         return
 
     if command_manager.is_command(message):
+        print("Command received from:")
+        print("\tGuild:", message.author.nick)
+        print("\tUser:",  message.guild.name)
         await command_manager.run(message)
+        print()
 
 is_ready = True
 client.run(SECRET["token"])
