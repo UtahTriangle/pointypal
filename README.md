@@ -18,9 +18,27 @@ The largest PointyPal community, exclusive to University of Utah students, is ho
 
 With the entire source code available here, anybody is welcome to host their own instance of PointyPal. However, Utah Triangle hosts an instance of PointyPal for free.
 
-To add PointyPal to your server, go to [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org) and grant the bot the necessary permissions. Once finished, you'll receive a notification that PointyPal was added to your server successfully.
+### Easy Install
 
-## General Commands
+Adding the Utah Triangle version of PointyPal to your server is easy! For a quick set-up, go to [pointypal.utahtriangle.org](https://pointypal.utahtriangle.org) and grant the bot the necessary permissions. Once finished, you'll receive a notification that PointyPal was added to your server successfully.
+
+### Manual Install
+
+In order to host your own version of PointyPal, you'll need to:
+
+* [Create a Discord Bot and retrieve its' API Key](https://www.writebots.com/discord-bot-token/)
+* Have a 24/7 computer that is able to run Python 3.*.
+    - To install the necessary dependencies, create a new virtual environment and run `pip install -U discord.py dotmap pyyaml`
+* Create a clone of this repository onto your computer.
+
+Once you have the environment set up, you can run your instance of PointyPal by:
+
+1. Renaming `configs/secrets.yaml.sample` to `configs/secrets.yaml` and replacing the sample token with your Discord Bot API Token
+2. Running `bot.py`
+
+Once the bot is running and added to your Discord server, you can `@` the bot to ensure everything is in working order!
+
+### General Commands
 
 * `@PointyPal join-class [CLASS CODES]`
     - Adds a student to a text channel specific to the given class, along with the text and voice channel for that class's department.
